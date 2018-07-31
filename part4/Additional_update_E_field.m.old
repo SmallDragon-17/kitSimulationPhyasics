@@ -1,0 +1,16 @@
+if nn>1 && nn< 2*nMax/3
+   tilEz(:,y,:) = tilEz(:,y,:)+(exp(-(4*(t-tau)/tau).^2)-(exp(-(4*(t-ht-tau)/tau).^2) ));
+   % tilEz(:,16,:) = tilEz(:,16,:)+(exp(-(4*(t-tau)/tau).^2)-(exp(-(4*(t-ht-tau)/tau).^2) ));
+
+end
+
+EEz(nn)=tilEz(1,y,1);
+
+if t<2.0*tau:
+    input = 1*exp(-(4*(t-tau)/tau).^2);
+else
+    input = 0; 
+end
+diffinput = input + old;
+old = diff
+    

@@ -1,0 +1,20 @@
+common_initialization2;
+t=0;
+nMax=330;
+setting_for_others;
+for nn=1:nMax
+    Update_Ex_for_free_boundary;
+    Update_Ey_for_free_boundary;
+    Update_Ez_for_free_boundary;
+    Additional_update_E_field2;
+    t=t+ht/2;
+    Update_H_field;
+    t=t+ht/2;
+end
+%subplot(1,2,1);
+figure(1);
+plot(ht*(0:nMax-1)',resInputVn);
+%subplot(1,2,2);
+figure(2);
+plot(ht*(0:nMax-1)',resTotalVn);
+%hold;
